@@ -1,0 +1,25 @@
+.custom-font {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.location-font {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.tab-underline {
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.tab-underline :hover {
+    border-color: #0E97E6;
+}
+
+.card-parent {
+    transition: background-color 0.3s;
+}
+
+.card-parent:hover {
+    background-color: rgb(243, 244, 246);
+}

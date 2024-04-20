@@ -23,7 +23,7 @@ const InfoCard: React.FC<{ podData: PodData }> = ({ podData }) => {
             <div>
                 <p className="mb-2 font-semibold text-lg tracking-tight  text-[#2E2D2D]">{displayName}</p>
                 <p className="font-bold text-xs" style={{ color: getStatusColor(status) }}>
-                    {status === 'OCCUPIED' ? `Next available in ${nextAvailableIn} mins` : status}
+                    {status === 'OCCUPIED' ? `NEXT AVAILABLE IN ${nextAvailableIn} MINS` : status}
                 </p>
             </div>
         </div>

@@ -7,9 +7,19 @@ const BottomSection: React.FC = () => {
     const [data, setData] = useState<PodData[]>([]);
 
     useEffect(() => {
-        axios.get<PodData[]>('https://mocki.io/v1/f959a23b-97c2-48d4-be0c-a030efa0a2e8')
-            .then(response => setData(response.data))
-            .catch(error => console.error('Error fetching data:', error));
+        const fetchData = async () => {
+            try {
+                console.log('API got called successfully')
+                const response = await axios.get<PodData[]>('https://mocki.io/v1/f959a23b-97c2-48d4-be0c-a030efa0a2e8');
+                setData(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
+        const intervalId = setInterval(fetchData, 30000);
+
+        return () => clearInterval(intervalId);
     }, []);
     return (
         <div className="p-2">
